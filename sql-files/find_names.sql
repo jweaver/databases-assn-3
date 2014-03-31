@@ -1,0 +1,1 @@
+select first_name, last_name from users U where U.entity_id IN (select from_entity from connections C where C.to_entity=(select entity_id from groups G where G.name='University Of Southern California'));

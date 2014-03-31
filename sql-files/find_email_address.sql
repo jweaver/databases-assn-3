@@ -1,0 +1,3 @@
+select email from users U where U.entity_id IN (
+       select from_entity from connections where to_entity IN (
+              select entity_id from users where (first_name='Jackie' and last_name='Chan') OR (first_name='Lady' and last_name='Gaga')));

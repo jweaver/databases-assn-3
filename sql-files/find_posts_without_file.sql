@@ -1,0 +1,1 @@
+select content from (select content, resource_attachment_id, created_on from posts P where P.author_id = (select entity_id from users U where U.first_name='Jackie' and U.last_name='Chan')) where resource_attachment_id is null and created_on > (TO_DATE('2014/01/01 00:00:01', 'yyyy/mm/dd hh24:mi:ss')) and created_on < (TO_DATE('2014/01/31 23:59:59', 'yyyy/mm/dd hh24:mi:ss'));

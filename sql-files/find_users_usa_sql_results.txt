@@ -1,0 +1,14 @@
+SQL> select first_name, last_name, user_id, email from users where entity_id IN (select from_entity from connections where to_entity IN (select entity_id from groups)) AND country = 'USA';
+
+FIRST_NAME           LAST_NAME          USER_ID EMAIL
+-------------------- --------------- ---------- ------------
+Lady                 Gaga                     1 ladygaga@xx.
+                                                com
+
+Michael              Smith                    2 mickey@xx.co
+                                                m
+
+Robert               Moore                    5 robert@xx.co
+                                                m
+
+Tiger                Woods                   13 woods@xx.com

@@ -1,0 +1,5 @@
+SQL> select content from (select content, created_on from posts P where P.author_id = (select entity_id from users U where U.first_name='Jackie' and U.last_name='Chan')) where created_on > (TO_DATE('2014/01/01 00:00:01', 'yyyy/mm/dd hh24:mi:ss'));
+
+CONTENT
+--------------------
+Amazon hiring interns

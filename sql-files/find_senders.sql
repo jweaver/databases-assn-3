@@ -1,0 +1,1 @@
+select first_name, last_name from users where entity_id IN (select author_id from comments where post_id IN (select post_id from posts where author_id = (select entity_id from users U where U.first_name='Jackie' and U.last_name='Chan')));

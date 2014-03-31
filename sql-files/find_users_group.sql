@@ -1,0 +1,1 @@
+select first_name, last_name from users U where U.entity_id NOT IN (select author_id from posts where created_on >= sysdate-7) AND (U.entity_id IN (select from_entity from connections where to_entity = (select G.entity_id from groups G where G.entity_id IN (select to_entity from connections GROUP BY to_entity HAVING COUNT(*) > 10))));

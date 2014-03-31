@@ -1,0 +1,1 @@
+select user_id, first_name, last_name, email, registration_date from users where registration_date > TO_DATE('2013/01/23 23:59:59', 'yyyy/mm/dd hh24:mi:ss') and registration_date < TO_DATE('2013/01/24 23:59:59', 'yyyy/mm/dd hh24:mi:ss') order by registration_date desc;
